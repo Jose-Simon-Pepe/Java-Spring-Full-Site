@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+		<meta charset="utf-8">
+		<meta name="author" content="Equipo_8_A">
+		<meta name="description" content="Pagina web para manejo rutinas de entrenadores y deportistas">
+		<meta name="keyword" content="deportes, gimnasio">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+        <!--link para circulo rojo/verde-->   
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+
+
+        <link rel="stylesheet" href="..\static\css\administrador_estilos.css"> 
+
+        <title>list_deportistas</title>
+		<link rel="shortcut icon" href="..\static\img\logo_blanco.jpg">
+	</head>
+
+    <body>
+        
+       <!-- <header>
+            <h1>Bienvenido a nuestra p&aacute;gina</h1>
+        </header>
+        -->
+        <nav>
+            <ul> 
+                <li><a th:href = "@{/index}">Inicio</a></li>
+                <li><a th:href = "#">Panel de control</a></li>
+            </ul>
+        </nav>
+        <main>
+            
+            <div class="contenedor_listado_deportistas">
+
+                <div class="d-block justify-content-center text-center">
+
+                    <h2>Deportistas registrados</h2>
+
+                    <table class="col-10 container table table-success table-striped rounded mt-5">
+                        <thead>
+                            <tr>
+                                <th class="col-1">DNI</th>
+                                <th class="col-2">Nombre</th>
+                                <th class="col-2">Apellido</th>
+                                <th class="col-2">Email</th>
+                                <th class="col-1">Est&aacute; activo?</th>
+                                <th class="col-2">Acciones</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody> <!--trae la lista completa-->
+                            <tr th:each="deportista : ${deportistas}">
+                                <th th:text="${deportista.dni}">123</th> <!--dni-->
+                                <td th:text="${deportista.nombre}">juan</td> <!--nombre-->  
+                                <td th:text="${deportista.apellido}">perez</td> <!--apellido-->
+                                <td th:text="${deportista.email}">usuario@email</td> <!--email-->
+                                <td th:text="${deportista.alta}">
+                                    <i th:if="${deportista.alta}" class="fa fa-circle text-success"></i>
+                                    <i th:unless="${deportista.alta}"   class="fa fa-circle" style="color:red;"></i>
+                                </td>
+                                <td>
+                                    <a th:href = "@{#}">
+                                        <input type="button" value="Modificar" class="bg-warning text-dark rounded-pill">
+                                    </a>                            
+                                    <a th:href = "@{#}">
+                                        <input type="button" value="Eliminar" class="bg-danger text-white rounded-pill">
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>                    
+                    </table>
+                </div>
+            </div> <!---fin tabla con lista deportistas-->
+        </main>    
+    </body>
+</html>

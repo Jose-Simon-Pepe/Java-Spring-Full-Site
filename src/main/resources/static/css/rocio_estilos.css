@@ -1,0 +1,90 @@
+/*ESTE ARCHIVO MANEJA: ENTRENADOR, CARGAR_OBJETIVO, QUIENES_SOMOS(ABOUT) de ROCIO*/
+
+body {
+    height: 700px;
+    background-image: url("../img/logo_fondo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 40rem;
+    background-attachment: fixed;
+    text-align: center;
+    text-align-last: center;
+    line-height: 50px;
+    margin-top: 2%;
+    margin-left: 17%;
+}
+
+.principal {
+    margin-top: 7%;
+    margin-right: 2%;
+}
+
+.card_deportistas {
+    background-color: rgb(255, 255, 255);
+    border: solid 1px cornflowerblue;
+    border-radius: 25px;
+     display: flexbox;    
+    margin: 20px 10px;
+    padding: 10px;
+    width: 10rem;
+
+}
+
+.margen {
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.inicio_entrenador a{
+    text-decoration: none;
+    color:aliceblue;
+}
+.inicio_entrenador a:hover{
+    color:rgb(187, 254, 252);
+}
+
+.btn_entrenador a{
+    text-decoration: none;
+
+}
+/* 
+.btn_entrenador a:hover{
+    text-decoration-color: yellow;
+} */
+
+.card-body h5{
+        color: rgb(17, 194, 106);
+        Font-Style: italic;
+        font-size: 2.4em;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /*     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     */
+}
+
+.card-body p{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.btn_asignaciones li{
+    margin: 1%;
+}
+
+.btn_asignaciones a{
+    text-decoration: none;
+    color: currentColor;
+}
+.btn_asignaciones a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+#titulo_sst{
+    font-family: 'Black Ops One', cursive;
+    color: black;
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+.accordion-body p {
+    line-height: 150%;
+}
+

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+     
+        <meta charset="utf-8">
+        <meta name="author" content="Equipo_8_A">
+        <meta name="description" content="Pagina web para manejo rutinas de entrenadores y deportistas">
+        <meta name="keyword" content="deportes, gimnasio">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+       <!--fonts-->
+       <style>@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&family=Libre+Barcode+EAN13+Text&family=Square+Peg&display=swap');</style> 
+       <!--FONT GOOGLE titulo-->
+       <style>@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Libre+Barcode+128&family=Libre+Barcode+128+Text&display=swap');</style>
+
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="\css\registro_estilos.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+                integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://bootstrap-colors-extended.herokuapp.com/bootstrap-colors.css" />
+                
+  
+
+       <link rel="stylesheet" href="/css/perfil_estilos.css"> 
+
+        <title>Perfil</title>
+        <link rel="shortcut icon" href="\img\logo_blanco.jpg">
+    </head>
+
+    <body>
+    
+        <header class="btn_registro">
+            <button type="button" class="btn btn-dark">
+                <a th:href = "@{/index}">Inicio</a> 
+            </button>
+            <button type="button" class="btn btn-warning text-white">
+                <a th:href="@{/usuario/panel-control}">Panel de control</a></button>
+            </button>
+            <button type="button" class="btn btn-danger">
+                <a th:href="@{/logout}">Cerrar Sesi&oacute;n</a>
+            </button>            
+        </header>
+       
+        <h1 id="titulo_sst">Mi Perfil</h1>
+    
+        <div class="datos_personales">
+
+            <h2 th:text = "${usuario.nombre}" id="nombre_perfil"> </h2> <!---traigo nombre de usario--> 
+
+                    <div th:if="${estado!=null}">
+            <p th:text="${estado}" class="estado_cartel"></p>
+        </div>
+            <!-------inicio perfil ENTRENADOR-------->     
+             
+        <main>   
+            <div class="container my-2">
+                <div th:if="${entrenador != null}" class="perfil_entrenador d-flex justify-content-center align-content-center text-center">                
+                    <form th:action="@{/usuario/actualizar}" method="POST" class="col-10 bg-teal m-3 pt-2 pb-4 rounded">
+
+                        <div class="row justify-content-between flex-wrap">
+                                <div class="ml-5 mr-5 mt-4">
+                                    <label for="nombre_usuario_entrenador">Nombre de usuario </label><br>
+                                    <input th:value="${usuario.nombreUsuario}" type="text" id="nombre_usuario" name="nombreUsuario"><br>
+                            </div>    
+                            <div class="ml-5 mr-5 mt-4">
+                                <label for="email_entrenador">Email</label><br>
+                                <input th:value="${entrenador.email}" type="email" id="email" name="email" disabled><br>
+                            </div>
+                            <!--
+                            <div class="ml-5 mr-5 mt-4">                             
+                                <label for="contraseña_entrenador">Contraseña</label><br>
+                                <input th:value="${usuario.password}" type="password" id="contraseña_entrenador" name="contraseñaEtrenador"><br>
+                            </div>
+                            -->                        
+                        </div>
+                        <div class="row justify-content-between flex-wrap">
+                            <div class="ml-5 mr-5 mt-4">                                                    
+                                <label for="nombre_entrenador">Nombre</label><br>
+                                <input th:value="${entrenador.nombre}" type="text" id="nombre" name="nombre" ><br>
+                            </div>
+                            <div class="ml-5 mr-5 mt-4">
+                                <label for="apellido_entrenador">Apellido(s) </label><br>
+                                <input th:value="${entrenador.apellido}" type="text" id="apellido" name="apellido"><br>
+                            </div>
+                            <div class="ml-5 mr-5 mt-4">
+                                <label for="dni_entrenador">DNI</label><br>
+                                <input th:value="${entrenador.dni}" type="text" id="dni" name="dni"><br>
+                            </div>
+                        </div>
+                        <div class="row justify-content-between flex-wrap">
+                            <div class="ml-5 mr-5 mt-4"> 
+                            <label for="fecha_nacimiento_entrenador">Fecha de nacimiento</label><br>
+                            <input th:value="${entrenador.fechaNacimiento}"  type="date" id="fecha_nacimiento" name="fechaNacimiento"><br><br>
+                            </div>
+                            <div class="ml-5 mr-2 mt-4"> 
+                                <label for="telefono_entrenador">Tel&eacute;fono </label><br>
+                                <input th:value="${entrenador.telefono}"  type="text" id="telefono" name="telefono"><br>
+                            </div>
+                            
+                            <div class="ml-5 mr-5 mt-4"> 
+                                <label for="direccion_entrenador">Direcci&oacute;n </label><br>
+                                <input th:value="${entrenador.direccion}"  type="text" id="direccion" name="direccion"><br>
+                            </div>
+                        </div>
+                        <div class="row justify-content-between flex-wrap">
+                            <div class="ml-5 mr-5 mt-4">
+                                <label for="sexo_entrenador">Sexo</label><br>
+                                <input th:value="${entrenador.sexo}" type="text" id="sexo" name="sexo" ><br>
+                            </div>
+                            <div class="ml-5 mr-5 mt-4">
+                                <label for="tipo_usuario_entrenador">Tipo de usuario</label><br>                  
+                                <input th:value="${usuario.myRol}"  type="text" id="tipo_usuario" name="tipoUsuario" disabled ><br>
+                                <!--que no pueda cambiar el tipo de usuario-->            
+                            </div>
+                            <input type="hidden" name="idDeQuienActualiza" th:value="${usuario.id}">
+
+                        </div>
+                        <input type="submit" id="guardar_cambios" value="Guardar cambios" class=" button bg-orange-light border-maroon-light text-navy rounded-pill mt-4 pl-5 pr-5"> 
+
+                        </form>
+                    </div>    
+                </div>
+            </div> 
+                
+            <!-------fin perfil ENTRENADOR-------->   
+
+            <!-------inicio perfil DEPORTISTA-------->     
+            <div class="container my-2">
+                    <div th:if="${deportista != null}" class="perfil_deportista d-flex justify-content-center align-content-center text-center">                  
+                        <form th:action="@{/usuario/actualizar}" method="POST" class="col-10 bg-teal m-3 pt-2 pb-4 rounded">
+                        
+                            <div class="row justify-content-between flex-wrap">
+                                <div class="ml-5 mr-5 mt-4">
+                                    <label for="nombre_usuario_deportista">Nombre de usuario </label><br>
+                                    <input th:value="${usuario.nombreUsuario}" type="text" id="nombre_usuario_deportista" name="nombreUsuario"><br>
+                                </div>    
+                                <div class="ml-5 mr-5 mt-4">
+                                    <label for="email_deportista">Email</label><br>
+                                    <input th:value="${deportista.email}" type="email" id="email_deportista" name="email" disabled><br>
+                                </div>
+                            <!--<div class="ml-5 mr-5 mt-4"> 
+                                        <label for="contraseña_deportista">Contraseña</label><br>
+                                    <input th:value="${usuario.password}" type="password" id="contraseña_deportista" name="contraseña"><br> 
+                            </div>-->
+                            </div>
+                            <div class="row justify-content-between flex-wrap">
+                                <div class="ml-5 mr-5 mt-4"> 
+                                    <label for="nombre_deportista">Nombre</label><br>
+                                    <input th:value="${deportista.nombre}" type="text" id="nombre_deportista" name="nombre" ><br>
+                                </div>
+                                <div class="ml-5 mr-5 mt-4">   
+                                    <label for="apellido_deportista">Apellido(s) </label><br>
+                                    <input th:value="${deportista.apellido}" type="text" id="apellido_deportista" name="apellido"><br>
+                                </div>
+                                <div class="ml-5 mr-5 mt-4">  
+                                    <label for="dni_deportista">DNI</label><br>
+                                    <input th:value="${deportista.dni}" type="text" id="dni_deportista" name="dni"><br>
+                                </div>
+                            </div>
+                            <div class="row justify-content-between flex-wrap">
+                                <div class="ml-5 mr-5 mt-4">  
+                                    <label for="fecha_nacimiento_deportista">Fecha de nacimiento</label><br>
+                                    <input th:value="${deportista.fechaNacimiento}"  type="date" id="fecha_nacimiento" name="fechaNacimiento"><br><br>
+                                </div>
+                                <div class="ml-5 mr-2 mt-4">    
+                                    <label for="telefono_deportista">Tel&eacute;fono </label><br>
+                                    <input th:value="${deportista.telefono}"  type="text" id="telefono_deportista" name="telefono"><br>
+                                </div>                    
+                                <div class="ml-5 mr-5 mt-4"> 
+                                    <label for="direccion_deportista">Direcci&oacute;n </label><br>
+                                    <input th:value="${deportista.direccion}"  type="text" id="direccion_deportista" name="direccion"><br>
+                                </div>
+                            </div>
+                            <div class="row justify-content-between flex-wrap">
+                                <div class="ml-5 mr-5 mt-4">
+                                    <label for="sexo_deportista">Sexo</label><br>
+                                    <input th:value="${deportista.sexo}" type="text" id="sexo" name="sexo" ><br>
+                                </div>
+                                <div class="ml-5 mr-5 mt-4">  
+                                    <label for="tipo_usuario_deportista">Tipo de usuario</label><br>                  
+                                    <input th:value="${usuario.myRol}"  type="text" id="tipo_usuario_deportista" name="tipoUsuario" disabled><br>
+                            <!--que no pueda cambiar el tipo de usuario-->                                 
+                                </div>
+                             <input type="hidden" name="idDeQuienActualiza" th:value="${usuario.id}">
+
+                            </div>
+                            <input type="submit" id="guardar_cambios" value="Guardar cambios" class=" button bg-orange-light border-maroon-light text-navy rounded-pill mt-4 pl-5 pr-5"> 
+
+                        </form>
+                    </div>
+                </div>
+            </div> 
+        </main>
+            <!-------FIN PERFIL ENTRENADOR-------->   
+
+            <!-------inicio perfil ADMINISTRADOR   ---> 
+    <!--         <div th:if="${admin != null}" class="perfil_administrador">
+
+                 <form th:action="@{/perfil?actualizar=Admin}" method="POST">
+
+                    <label for="nombre_usuario_administrador">Nombre de usuario </label><br>
+                    <input th:value="${usuario.nombreUsuario}" type="text" id="nombre_usuario_administrador" name="nombreUsuarioAdministrador"><br>
+
+                    <label for="email_administrador">Email</label><br>
+                    <input th:value="${usuario.email}" type="email" id="email_administrador" name="emailAdministrador" disabled><br>
+
+                    <label for="contraseña_administrador">Contraseña</label><br>
+                    <input th:value="${usuario.password}" type="password" id="contraseña_administrador" name="contraseñaAdministrador"><br>
+
+                    <label for="nombre_administrador">Nombre</label><br>
+                    <input th:value="${usuario.nombre}" type="text" id="nombre_administrador" name="nombreAdministrador" ><br>
+
+                    <label for="apellido_administrador">Apellido(s) </label><br>
+                    <input th:value="${usuario.apellido}" type="text" id="apellido_administrador" name="apellidoAdministrador"><br>
+
+                    <label for="dni_administrador">DNI</label><br>
+                    <input th:value="${usuario.dni}" type="text" id="dni_administrador" name="dniAdministrador"><br>
+
+                    <label for="edad_administrador">Edad</label><br>            
+                    <input th:value="${usuario.edad}" type="number" id="edad_administrador" name="edadAdministrador"><br>
+
+                    <label for="sexo_administrador">Sexo</label><br>
+                    <select th:value="${usuario.sexo}" id="sexo_administrador" name="sexoAdministrador">
+                        <option value="">-</option>
+                        <option value="f">Femenino</option>
+                        <option value="m">Masculino</option>
+                        <option value="o">Prefiero no decir</option>
+                    </select><br><br>
+
+                    <label for="fecha_nacimiento_administrador">Fecha de nacimiento</label><br>
+                    <input th:value="${usuario.fechaNacimiento}"  type="date" id="fecha_nacimiento_administrador" name="fechaNacimientoAdministrador"><br><br>
+
+                    <label for="telefono_administrador">Tel&eacute;fono </label><br>
+                    <input th:value="${usuario.telefono}"  type="text" id="telefono_administrador" name="telefonoAdministrador"><br>
+
+                    <label for="direccion_administrador">Direcci&oacute;n </label><br>
+                    <input th:value="${usuario.direccion}"  type="text" id="direccion_administrador" name="direccionAdministrador"><br>
+
+                    <label for="tipo_usuario_administrador">Tipo de usuario</label><br>                  
+                    <input th:value="${usuario.myRol}"  type="text" id="tipo_usuario_entrenador" name="myRolEntrenador" disabled><br>
+
+                    <label for="deportistas">Mis Deportistas</label><br>
+                    <select th:value="${usuario.deportistas}" id="listaDeportistas" name="listaDeportistasAdministrador">
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select><br><br>  
+
+                    <label for="rutinas">Mis Rutinas</label><br>
+                    <select th:value="${deportista.rutinaDeportista}" id="listaRutinas" name="listaRutinasAdministrador">
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select><br><br>   
+                    <input type="submit" id="guardar_cambios" value="Guardar cambios">
+
+                </form>
+            </div>  -->
+
+        </div> <!----div class datos personales-->
+
+    </body>
+
+</html>

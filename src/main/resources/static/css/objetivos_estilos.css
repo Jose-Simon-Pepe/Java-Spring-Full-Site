@@ -1,0 +1,118 @@
+body {
+  height: 700px;
+  background-image: url("../img/logo_fondo.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 40rem;
+  background-attachment: fixed;
+  text-align: center;
+  text-align-last: center;
+  line-height: 50px;
+  margin-top: 50px;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+.principal {
+  margin-top: 250px
+}
+
+.card_deportistas {
+  background-color: rgb(255, 255, 255);
+  border: solid 1px cornflowerblue;
+  border-radius: 25px;
+  display: inline-block;
+  margin: 20px 10px;
+  padding: 10px;
+  width: 14rem;
+
+}
+
+.margen {
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+.margen h1{
+  display: inline;
+  text-align: justify;
+}
+
+.sin_objetivos {  /*este cartel aparece cuando no hay objetivos en la lista*/
+  background-color: rgba(94, 248, 115, 0.3);
+  font-size: 1.8em;
+  font-family: 'Square Peg', cursive ,'Arial Narrow', Arial, sans-serif;;
+  font-style: italic;
+  font-weight: bold;
+  color: #041408;
+  margin-top: 10%;
+  width: 70%;
+  padding: 1%;
+  padding-bottom: 0.5%;
+  display: inline-block;
+}
+
+#nombre_planifica{
+  text-transform: capitalize ; /*pone la 1ra en Mayus*/
+  font-style: italic;
+}
+
+.inicio_entrenador a{
+  text-decoration: none;
+  color:aliceblue;
+}
+.inicio_entrenador a:hover{
+  color:rgb(187, 254, 252);
+}
+
+.btn_entrenador a{
+  text-decoration: none;
+
+}
+/* 
+.btn_entrenador a:hover{
+  text-decoration-color: yellow;
+} */
+
+.card-body h5{
+      color: rgb(17, 194, 106);
+      Font-Style: italic;
+      font-size: 3em;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  /*     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   */
+}
+
+.card-body p{
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.btn_asignaciones li{
+  margin: 1%;
+}
+
+.btn_asignaciones a{
+  text-decoration: none;
+  color: currentColor;
+}
+.btn_asignaciones a:hover{
+  text-decoration: none;
+  color: white;
+}
+
+
+.estado_cartel{ /*este cartel aparece cuando se elimina un objetivo de la lista*/
+  background-color: rgba(94, 248, 115, 0.3);
+  font-size: 1.8em;
+  font-family: 'Square Peg', cursive ,'Arial Narrow', Arial, sans-serif;;
+  font-style: italic;
+  font-weight: bold;
+  color: #041408;
+}
+
+#titulo_sst{
+  font-family: 'Black Ops One', cursive;
+  color: black;
+  margin-top: 2%;
+  margin-bottom: 0.5%;
+}

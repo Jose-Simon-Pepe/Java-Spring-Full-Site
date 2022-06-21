@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("../img/logo_fondo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    text-align: center;
+    text-align-last: center;
+}
+
+/*botones de menu */
+
+
+.inicio_entrenador a{
+    text-decoration: none;
+    color:aliceblue;
+}
+.inicio_entrenador a:hover{
+    color:rgb(187, 254, 252);
+}
+
+.btn_entrenador a{
+    text-decoration: none;
+
+}
+/* 
+.btn_entrenador a:hover{
+    text-decoration-color: yellow;
+} */
+
+/* nombre de entrenador*/
+.card-body h3{
+        color: rgb(17, 194, 106);
+        Font-Style: italic;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /*     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     */
+}
+
+.card-body p{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.btn_asignaciones li{
+    margin: 1%;
+}
+
+.btn_asignaciones a{
+    text-decoration: none;
+    color: currentColor;
+}
+.btn_asignaciones a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+#titulo_sst{
+    font-family: 'Black Ops One', cursive;
+    color: black;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.card_deportistas {
+    background-color: rgb(255, 255, 255);
+    border: solid 1px cornflowerblue;
+    border-radius: 25px;
+    padding: 10px;
+    width: auto;
+    height: auto;
+    box-sizing: border-box;
+
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1%;
+    grid-auto-rows: min-content ;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-top: 2%;
+    padding-bottom:2%;
+/*     background-color:rgb(22, 14, 245, 0.3) ;
+ */    justify-items: center;
+    height: 50%;
+    margin-left: 5%;
+    margin-right: 5%;
+    box-sizing: border-box;
+    border-radius: 25px;
+}
+
+.btn_entrenador{
+    margin-top: 0px;
+}
+
+.card-img-top{
+    padding-top:1%;
+    max-width:50%;
+    max-height:50%;
+}
+
+.grid-item{
+    height: 90%;
+}
+
+.inicio_entrenador{
+    padding-top: 1%;
+}
+
+.estado_cartel{ /*este cartel aparece cuando se elimina un objetivo de la lista*/
+    background-color: rgba(94, 248, 115, 0.3);
+    font-size: 1.8em;
+    font-family: 'Square Peg', cursive ,'Arial Narrow', Arial, sans-serif;;
+    font-style: italic;
+    font-weight: bold;
+    color: #041408;
+    margin-left: 20%;
+    margin-right: 20%;
+  }

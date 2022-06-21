@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!---link a bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<!--   <link rel="stylesheet" href="\css\style.css">
+ -->  
+ 
+   <link rel="stylesheet" href="\css\cargar_objetivos_estilos.css">
+
+  <link rel="shortcut icon" href="\img\logo_blanco.jpg">
+
+  <title>SST-Cargar Objetivo</title>
+
+
+</head>
+
+<body>
+  <header class="header">
+
+    <div class="btn_objetivos">
+      <button type="button" class="btn btn-dark">
+        <a th:href="@{/index}">Inicio</a></button>       
+      <button type="button" class="btn btn-warning text-white" >
+        <a th:href="@{/usuario/panel-control}">Panel de control</a></button>
+      <button class="btn btn-success" type="button">
+        <a th:href="@{/usuario/ver-rutinas}"> Mis Rutinas</a></button>
+      <button class="btn btn-danger" type="button">
+        <a th:href="@{/logout}">Cerrar sesi&oacute;n</a></button>        
+    </div>
+
+  </header>
+
+  <div class="margen">
+      <h3>Objetivos de planificaci&oacute;n para: </h3>
+      <h3 th:text="${deportista.nombre}" id="nombre_planifica"></h3>
+  </div>
+    
+     <div th:if="${estado!=null}">
+         <p th:text="${estado}"></p>
+      </div>
+
+  <form th:action="@{/usuario/entrenador/cargar-objetivo/__${deportista.id}__}" method="POST" class="formulario"> 
+  
+    <div class="fechas">
+       <label><i>Ingrese el d&iacute;a de comienzo de planificaci&oacute;n:</i></label> 
+        <div class="form-group mb-3 d-flex">
+          <label class="input-group-text" id="inputGroup-sizing-default">Comienzo </label>
+          <input type="date" class="form-control" name="comienzo" id="comienzo" 
+            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />        
+        </div>
+    </div>    
+
+    <div class="fechas">
+      <label><i>Ingrese el d&iacute;a de finalizaci&oacute;n del Objetivo:</i></label>
+      <div class="form-group mb-3 d-flex">
+          <label class="input-group-text" id="inputGroup-sizing-default">Finalizaci&oacute;n </label>
+          <input type="date" class="form-control" name="finalizacion" id="finalizacion" 
+            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
+      </div>
+    </div>
+
+
+      <div class="form-group mb-3 d-flex">
+          <label class="input-group-text text-primary" id="inputGroup-sizing-default" >OBJETIVO </label>
+          <input type="text" name="objetivo"  class="form-control" placeholder="Ingrese el objetivo para el período elegido" 
+              aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>              
+      </div>
+      
+      <button type="submit" class="btn btn-outline-primary">Cargar</button>
+       
+  </form>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,91 @@
+body{
+    width: 70%;
+    height: 700px;
+    background-image: url("/img/logo_fondo.png");
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size: 40rem;
+    background-attachment: fixed;
+    text-align: center ; 
+    text-align-last: center;  
+    line-height: 50px;
+    margin-top: 50px;
+    margin-left: 15%;
+    margin-right: 25%;
+
+}
+.principal{
+    margin-top: 150px 
+}
+.card_deportistas{
+    display:inline-block; 
+    background-color:rgb(255, 255, 255);
+}
+.card_sesion{
+    display:inline-block ; background-color: rgb(255, 255, 255);
+    border-style:groove ;border-color:rgb(20, 20, 188);
+}
+.margen{  
+        margin-left: 300px;
+        margin-right:300px; 
+}
+.agregar_deportistas{
+    margin-top:50px
+}
+.login{
+    margin-top: 1%;
+
+}
+#fondo{
+    background-color: rgb(255, 255, 255);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+#error_cartel{ /*este cartel aparece cuando se elimina un objetivo de la lista*/
+    background-color: rgba(236, 27, 55, 0.2);
+    font-size: 1.98em;
+    font-family: 'Square Peg', cursive ,'Arial Narrow', Arial, sans-serif;;
+    font-style: italic;
+    font-weight: bold;
+    color: #ff0000;
+    padding: 0.5% 5% 0.5% 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    display: inline-flex;
+/*      text-size-adjust: initial;
+ */    width: auto;
+    text-align: center;
+  }
+
+    /*acccion sobre botones de menu*/
+.header a{
+    text-decoration: double;
+    color: currentColor;
+}
+.header a:hover{
+    text-decoration: none;
+    color: rgb(53, 246, 240);
+    
+}
+
+/*olvide contraseña*/
+#olvide_contrasenia {
+    color: blue;
+    font-style: italic;
+} 
+
+#olvide_contrasenia:hover {
+    text-decoration: underline;
+}
+
+
+#titulo_sst{
+    font-family: 'Black Ops One', cursive;
+    padding-bottom: 1%;
+}

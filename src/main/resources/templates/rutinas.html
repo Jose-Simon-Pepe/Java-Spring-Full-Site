@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"  xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">--> <!--agrego fuente-->
+        <!--	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Handlee">-->
+
+        <meta charset="utf-8">
+        <meta name="author" content="Equipo_8_A">
+        <meta name="description" content="Pagina web para manejo rutinas de entrenadores y deportistas">
+        <meta name="keyword" content="deportes, gimnasio">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+       <!--fonts-->
+       <style>@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&family=Libre+Barcode+EAN13+Text&family=Square+Peg&display=swap');</style> 
+       <!--FONT GOOGLE titulo-->
+       <style>@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Libre+Barcode+128&family=Libre+Barcode+128+Text&display=swap');</style>
+
+
+    <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">     
+
+           <!--link para circulo rojo/verde-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+        
+        <link rel="stylesheet" href="\css\rutinas_estilos.css"> 
+
+        <link rel="shortcut icon" href="\img\logo_blanco.jpg">
+
+        <title>Rutinas</title>
+
+    </head>
+
+    <body>
+
+        <header class="header">           
+            <div class="btn_objetivos">
+                <button type="button" class="btn btn-dark">
+                  <a th:href="@{/index}">Inicio</a></button>       
+                <button type="button" class="btn btn-warning text-white">
+                  <a th:href="@{/usuario/panel-control}">Panel de control</a></button>
+  
+                <button sec:authorize="hasAnyRole('ENTRENADOR')" th:if="${deportista == null}" class="btn btn-success" type="button" id="nueva_rutina">
+                    <a th:href="@{/usuario/entrenador/ver-cargar-rutinas}">Crear nueva rutina</a>
+                </button>
+                
+                <button class="btn btn-danger" type="button">
+                  <a th:href="@{/logout}">Cerrar sesi&oacute;n</a></button>        
+              </div>                   
+        </header>
+
+
+        <div class="contenedor_listado_rutinas">
+
+            <h2 id="titulo_rutinas">Rutinas Cargadas</h2>
+        
+<!--             <div sec:authorize="hasAnyRole('ENTRENADOR')" th:if="${deportista == null}">
+                <button class="btn btn-success" type="button" id="nueva_rutina">
+                    <a th:href="@{/usuario/entrenador/ver-cargar-rutinas}">Crear nueva rutina</a>
+                </button>
+            </div> -->
+
+            <div class="tabla_rutinas">
+
+               
+             <!---desde aca maneja la cabecera de la tabla-->   
+                <table class="table" id="tabla_ruti">
+                    <thead>
+                        <tr>
+                            <th scope="col" >Nombre Rutina</th>
+                            <th scope="col" >Descripci&oacute;n</th>
+                            <th th:if="${viendoMisRutinasEntrenador == false}" scope="col" >D&iacute;a</th>
+
+                            <!--lo ven los dos-->
+                            <th  th:if="${viendoMisRutinasEntrenador == false}" scope="col" id="realizada" name="realizada">Realizada</th>
+
+                            <th  th:if="${viendoMisRutinasEntrenador == false}" scope="col" id="comentarios" name="comentarios">Comentarios</th>
+
+                            <!-- del ENTRENADOR-->					
+                            <th sec:authorize="hasAnyRole('ENTRENADOR')" scope="col" id="acciones" name="acciones_entrenador">Acci&oacute;n</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>  
+                        
+                <!-- desde aca trae la lista completa-->
+    
+
+                    <div sec:authorize="hasAnyRole('ENTRENADOR')">
+                        <div th:each="rutina : ${rutinas}">
+                            <tr>
+                            <div th:if="${entrenador != null}">
+                                <td th:text="${rutina.nombre}" id="nombre_rutina">Tranquilita</td> <!--nombre rutina-->
+                                <td th:text="${rutina.descripcion}" id="descripcion">algo</td> <!--descripcion-->						
+                            </div>
+                            <div th:if="${deportista != null}">
+                                <td th:text="${rutina.rutina.nombre}" id="nombre_rutina">Tranquilita</td> <!--nombre rutina-->
+                                <td th:text="${rutina.rutina.descripcion}" id="descripcion">algo</td> <!--descripcion-->
+                                <td th:text="${rutina.dia}" id="dia">martes </td> <!--dia-->		
+                            </div>
+                    
+                            <!--lo q ve desde panel de control-->
+                            <div th:if="${viendoMisRutinasEntrenador == false}">
+                                <!--botones rojo verde-->
+                                <td >
+                                    <i th:if="${rutina.realizada == true}" class="fa fa-circle text-success"></i>
+                                    <i th:if="${rutina.realizada == false}" class="fa fa-circle" style="color:red;"></i>
+                                </td>
+                                <div th:if="${rutina.comentarios != null}">
+                                    <td th:text="${rutina.comentarios}" id="comentarios" name="comentarios">comentarios</td> 
+                                </div>
+                                <div th:if="${rutina.comentarios == null}">
+                                    <td id="comentarios" name="comentarios">No hay comentarios aun</td> 
+                                </div>
+                            </div>                     
+                            <div th:if="${viendoMisRutinasEntrenador == true}">
+                                <td>
+                                    <a th:href = "@{/usuario/entrenador/editar-mi-rutina/__${rutina.id}__}" id="eliminar" name="eliminar">
+                                        <input type="button"  class="btn btn-outline-danger " value="Editar">               
+                                    </a>
+                                    <a th:href = "@{/usuario/entrenador/borrar-mi-rutina/__${rutina.id}__}" id="eliminar" name="eliminar">
+                                        <input type="button"  class="btn btn-outline-danger " value="Eliminar">               
+                                    </a>
+                                </td>  
+                            </div>
+                            
+                            <div th:if="${viendoMisRutinasEntrenador == false}">
+                                <td >
+                                    <a th:href = "@{/usuario/entrenador/borrar-rutina-deportista/param(idRutinaDepo=${rutina.id})}" id="eliminar" name="eliminar">
+                                        <input type="button"  class="btn btn-outline-danger " value="Eliminar">
+                                    </a>
+                                </td>      
+                            </div>  
+                            
+                            </tr>
+                        </div>
+                    </div>
+
+                    </tbody>  <!--fin del cuerpo de la tabla--> 
+
+                </table> <!--fin de la tabla-->
+            </div>	
+
+        </div> <!---fin del  contenedor de la tabla con lista de rutinas-->
+
+
+
+
+
+    </body>
+
+</html>

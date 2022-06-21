@@ -1,0 +1,76 @@
+
+body {
+   
+    background-image: url("../img/logo_fondo.png");
+    background-repeat:no-repeat;
+    height: 700px;
+    background-position:center center;
+    background-size: 40rem;
+    background-attachment: fixed;
+    text-align-last: center;  
+    line-height: 50px;
+    margin-top: 2.5%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    padding-top: 0px;
+}  
+
+.btn_objetivos {
+    margin-top: 0px;
+}
+
+.btn_objetivos a{
+    color:aliceblue;
+    text-decoration: none;    
+}
+
+.btn_objetivos a:hover{
+    color: black;
+}
+
+
+.tabla_rutinas {
+    text-align: center;
+    width: 80%;
+    display: inline-block;
+}
+
+.tabla_rutinas table{ 
+    border-radius: 1em solid green;
+    text-align: center;
+} 
+
+#titulo_rutinas { 
+    font-family: 'Black Ops One', cursive;
+    color: black;
+    margin-top: 2%;
+    margin-bottom: 0.5%;
+}
+
+/* #nueva_rutina {
+    margin-bottom: 2%;
+} */
+
+#nueva_rutina a:hover{
+    text-decoration: none;
+    color: currentColor;
+}
+
+#nueva_rutina a{
+    text-decoration: none;
+    color: white;
+}
+
+.contenedor_listado_rutinas{
+
+    padding: 1px;
+    text-align: center;
+}
+
+#tabla_ruti {
+    text-align: center;
+    margin-right: 0px;
+}
+
+

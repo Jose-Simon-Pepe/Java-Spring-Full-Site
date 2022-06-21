@@ -1,0 +1,33 @@
+
+body{
+    color: rgb(128, 0, 98);  /*esta linea es para probar que funcionen los enlaces*/
+}
+
+.grid{
+    border: 1px solid;
+    width: 40%;
+    margin-right: 20%;
+    margin-left: 20%;
+    box-sizing: border-box;
+}
+
+.btn_deportistas{
+    background-color: rgb(150, 219, 238);
+    padding: 0.5em;
+    box-sizing: border-box;   
+    text-align: center;
+
+} 
+
+.btn_entrenadores{
+    background-color: greenyellow;
+    padding: 0.5em;
+    text-align: center;
+
+}
+
+.btn_deportistas input, .btn_entrenadores input{
+    width: 80%;
+    position: relative;
+    margin: 1%;
+}

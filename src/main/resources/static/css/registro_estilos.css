@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    position: relative;
+    bottom: 20px;
+}
+
+body{
+    background-image: url("/img/logo_fondo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 40rem;
+    background-attachment: fixed;
+}
+
+form {opacity: 0.85;}
+
+form div input, 
+form div select {
+    border-radius: 25px;
+    padding-left: 15px;
+    border: none;
+}
+
+form div input:hover,
+form div select:hover {
+    background-color: antiquewhite;
+}
+
+form div select option {background-color: aquamarine;
+}
+
+/*acccion sobre botones de menu cabecera*/
+
+.btn_registro{
+    padding-top: 2%;
+    margin-top: 2%;
+    text-align: center;
+}
+.btn_registro a{
+    text-decoration: double;
+    color: currentColor;
+}
+.btn_registro a:hover{
+    text-decoration: none;
+    color: rgb(53, 246, 240, 0.4);   
+}
+
+#titulo_sst{
+    font-family: 'Black Ops One', cursive;
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+#subtitulo {
+    padding-top: 1%;
+    text-align: center;
+    font-family: 'Black Ops One', cursive;
+    font-size: 1.5rem;
+}

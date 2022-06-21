@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="author" content="Equipo_8_A">
+    <meta name="description" content="Pagina web para manejo rutinas de entrenadores y deportistas">
+    <meta name="keyword" content="deportes, gimnasio">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="..\static\css\administrador_estilos.css">
+    <link rel="stylesheet" href="https://bootstrap-colors-extended.herokuapp.com/bootstrap-colors.css" />
+
+    <title>Administrador</title>
+    <link rel="shortcut icon" href="..\static\img\logo_blanco.jpg">
+</head>
+
+<body>
+    <!-- <header>
+            <h1>Bienvenido a nuestra p&aacute;gina</h1>
+        </header>
+        -->
+    <nav>
+        <ul>
+            <li><a th:href="@{/index}">Inicio</a></li>
+        </ul>
+    </nav>
+
+    <main class="container d-flex justify-content-center mt-5">
+        <div class="grid rounded">
+            <div class="btn_entrenadores">
+                <a th:href="#">
+                    <input type="button" value="Entrenadores" class="rounded-pill">
+                </a>
+            </div>
+            <div class="btn_deportistas">
+                <a th:href="#">
+                    <input type="button" value="Deportistas" class="rounded-pill">
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

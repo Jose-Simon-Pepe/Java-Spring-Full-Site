@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns="http://www.w3.org/1999/xhtml"> 
+    <head>
+		<!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">--> <!--agrego fuente-->
+	    <!--	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Handlee">-->
+
+		<meta charset="utf-8">
+		<meta name="author" content="Equipo_8_A">
+		<meta name="description" content="Pagina web para manejo rutinas de entrenadores y deportistas">
+		<meta name="keyword" content="deportes, gimnasio">
+	
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> 
+        
+
+		<link rel="stylesheet" href="/css/cargar_rutinas_estilos.css">
+        <script src="/js/agregar_rutina.js"></script>
+		
+        <title>Mis_deportistas</title>
+		<link rel="shortcut icon" href="/img/logo_blanco.jpg">
+	</head>
+
+    <body>
+    
+        <header class="header">           
+            <div class="btn_rutinas">
+                <button type="button" class="btn btn-dark">
+                  <a th:href="@{/index}">Inicio</a></button>       
+                <button type="button" class="btn btn-warning text-white">
+                  <a th:href="@{/usuario/panel-control}">Panel de control</a></button>
+              
+                <button class="btn btn-danger" type="button">
+                  <a th:href="@{/logout}">Cerrar sesi&oacute;n</a></button>        
+              </div>                   
+        </header>
+        
+    <!--CONTENEDOR PARA AGREGAR NUEVA RUTINA A DEPORTISTA--->        
+        <div class="agregar_rutinas">        
+                <h2 id="titulo_ruti">En esta secci&oacute;n pod&eacute;s asignar rutinas a:</h2>
+             <form th:action="@{/usuario/entrenador/guardar-rutinas}" method="POST"> 
+                                    
+                <div class="form-group mb-3 d-flex" >
+                    <label for="dni_deportista" class="input-group-text" id="inputGroup-sizing-default">DNI</label>
+                    <input th:value="${deportista.dni}" class="form-control" type="text" id="dni" name="dni" disabled 
+                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
+                </div>    
+
+                <div class="form-group mb-3 d-flex">
+                    <label for="nombre" class="input-group-text" id="inputGroup-sizing-default">Nombre</label>
+                    <input  th:value="${deportista.nombre}" class="form-control" type="text" id="nombre" name="nombre" disabled
+                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                <div class="form-group mb-3 d-flex">
+                    <label for="apellido" class="input-group-text" id="inputGroup-sizing-default">Apellido</label>
+                    <input th:value="${deportista.apellido}"  class="form-control" type="text" id="apellido" name="apellido" disabled
+                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" >
+                </div>
+                <div class="form-group mb-3 d-flex">                   
+                    <label for="lista_rutinas" class="input-group-text" id="inputGroup-sizing-default">Rutina</label><br>
+                    <select id="nombre_rutina" name="nombreRutina" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        <div th:each="rutina : ${entrenador.rutinas}" class="form-control">
+                            <option th:text="${rutina.nombre}">a</option>
+                        </div>    
+                    </select><br> 
+                </div>
+                <div class="form-group mb-3 d-flex">
+                    <label for="dia" class="input-group-text" id="inputGroup-sizing-default">D&iacute;a</label><br>
+                    <select id="dia" name="dia"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        <option value="LUNES">Lunes</option>
+                        <option value="MARTES">Martes</option>
+                        <option value="MIERCOLES">Mi&eacute;rcoles</option>
+                        <option value="JUEVES">Jueves</option>
+                        <option value="VIERNES">Viernes</option>
+                        <option value="SABADO">S&aacute;bado</option>
+                        <option value="DOMINGO">Domingo</option>
+                    </select><br>                           
+                </div> 
+              
+             </form>   
+            
+            <!--boton en JS para guardar el evento--> 
+                <button onclick="agregarRutina()" id="agregarRutina" class="btn btn-primary">Agregar rutina</button>
+     
+             <form th:action="@{/usuario/entrenador/guardar-rutinas}" method="POST"> 
+
+                <div>
+                    <label for="dni_deportista" class="input-group-text" id="inputGroup-sizing-default" hidden>DNI</label>
+                    <input th:value="${deportista.dni}" class="form-control" type="text" id="dni" name="dni" 
+                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" hidden/>
+                </div>    
+
+                <div >
+                    <label for="nombre" class="input-group-text" id="inputGroup-sizing-default" hidden>Nombre</label>
+                    <input  th:value="${deportista.nombre}" class="form-control" type="text" id="nombre" name="nombre" disabled
+                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" hidden/>
+                </div>
+
+                <div >
+                    <label for="apellido" class="input-group-text" id="inputGroup-sizing-default" hidden>Apellido</label>
+                    <input th:value="${deportista.apellido}"  class="form-control" type="text" id="apellido" name="apellido" disabled
+                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" hidden/>
+                </div>
+                <div >                   
+                    <label for="lista_rutinas" class="input-group-text" id="inputGroup-sizing-default" hidden>Rutina</label>
+                    <select id="nombre_rutina" name="nombreRutina" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" hidden>
+                        <div th:each="rutina : ${entrenador.rutinas}" class="form-control" hidden>
+                            <option th:text="${rutina.nombre}" hidden>a</option>
+                        </div>    
+                    </select>
+                </div>
+                <div >
+                    <label for="dia" class="input-group-text" id="inputGroup-sizing-default" hidden>D&iacute;a</label>
+                    <select id="dia" name="dia"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" hidden>
+                        <option value="LUNES">Lunes</option>
+                        <option value="MARTES">Martes</option>
+                        <option value="MIERCOLES">Mi&eacute;rcoles</option>
+                        <option value="JUEVES">Jueves</option>
+                        <option value="VIERNES">Viernes</option>
+                        <option value="SABADO">S&aacute;bado</option>
+                        <option value="DOMINGO">Domingo</option>
+                    </select>                          
+                </div> 
+             
+                <ol class="instructivo">
+                    <li>Eleg&iacute; el nombre de la rutina y el d&iacute;a.</li>
+                    <li>Hac&eacute; click en <b>Agregar rutina</b> para sumar las que quieras a la lista,luego presion&aacute; <b>Guardar</b>.</li>
+                </ol>
+                    <table class="table" id="tabla_rutinas">
+                        <thead>
+                            <tr>
+                                <th>Nombre rutina</th>
+                                <th>D&iacute;a</th>
+                            </tr>
+                        </thead>
+
+                        <tbody></tbody>
+                    </table>                  
+                    
+                <input type="hidden" id="input_rutinas" name="rutinasCargadas">
+
+                <input type="submit" id="guardar" value="Guardar" class="btn btn-success"><br>
+                
+             </form>
+                
+<!--             <button onclick="agregarRutina()" id="agregarRutina" class="btn btn-primary">Agregar rutina</button>
+ -->
+        </div><!---fin de AGREGAR RUTINA DEPORTISTA-->
+    </body>   
+
+</html>

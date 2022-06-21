@@ -1,0 +1,76 @@
+
+body {
+    height: 700px;
+    background-image: url("../img/logo_fondo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 40rem;
+    background-attachment: fixed;
+    text-align: center;
+    text-align-last: center;
+    line-height: 50px;
+    margin-top: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  
+  .principal {
+    margin-top: 250px
+  }
+  
+  .card_deportistas {
+    background-color: rgb(255, 255, 255);
+    border: solid 1px cornflowerblue;
+    border-radius: 25px;
+    display: inline-block;
+    margin: 20px 10px;
+    padding: 10px;
+    width: 14rem;
+  
+  }
+  
+  .margen {
+    margin-top: 4%;
+    margin-left: 10%;
+    margin-right: 10%;
+    line-height: 40px;
+  }
+  
+  .margen h3{
+    color: rgb(17, 194, 106);
+     position: relative;
+     display: inline-block;
+  }
+  
+  #nombre_planifica{
+    text-transform: capitalize ; /*pone la 1ra en Mayus*/
+    font-style: italic;
+  }
+
+  .card-body h5{
+        color: rgb(17, 194, 106);
+        Font-Style: italic;
+        font-size: 3em;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /*     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     */
+  }
+  
+  .card-body p{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .btn_objetivos a{
+    text-decoration: none;
+    color: currentColor;
+  }
+  .btn_objetivos a:hover{
+    text-decoration: none;
+    color: white;
+  }
+  
+ .formulario{
+   margin-left: 20%;
+   margin-right: 20%;
+ }
+

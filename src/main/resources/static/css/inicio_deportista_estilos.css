@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url("/img/logo_fondo.png");
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size: 40rem;
+    background-attachment: fixed;
+    text-align: center ; 
+    text-align-last: center;  
+
+}
+
+
+.card_sesion {
+    background-color: rgb(255, 255, 255);border-style:groove ;border-color:rgb(20, 20, 188);
+}
+
+a {
+    text-decoration: none;
+    color:aliceblue;
+}
+
+.opciones_sentimientos {
+    padding: 1%;
+}
+
+.card-title { /*muestra el nombre de entrenador*/
+    color: rgb(17, 194, 106);
+    Font-Style: italic;
+    font-size: 1.85em;
+    font-family: 'Black Ops One', cursive;
+/*     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ */}
+
+/*  .card-body{
+     padding-top: 5px;
+     padding-bottom: 2px;
+ } */
+
+ #rutina-nombre{
+    color: rgb(103, 103, 240);
+    font-Style: italic;
+    font-size: 1.7em;
+    font-family: 'Black Ops One', cursive;
+
+}
+
+ .sin_rutinas{ /*este cartel aparece cuando no hay rutinas en la lista*/
+    background-color: rgba(94, 248, 115, 0.3);
+    font-size: 1.8em;
+    font-family: 'Square Peg', cursive ,'Arial Narrow', Arial, sans-serif;;
+    font-style: italic;
+    font-weight: bold;
+    color: #041408;
+    margin-top: 10%;
+    padding: 1%;
+    padding-bottom: 0.5%;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  /*acccion sobre botones de menu*/
+.inicio_deportista a{
+    text-decoration: double;
+    color: currentColor;
+}
+.inicio_deportista a:hover{
+    text-decoration: none;
+    color: rgb(53, 246, 240);    
+}
+
+.card-text {
+    color: rgb(70, 16, 157);
+    margin-bottom: 0px;
+    margin-top: 0px;    
+}
+
+
+#titulo_sst{
+    font-family: 'Black Ops One', cursive;
+    color: black;
+    margin-top: 2%;
+    margin-bottom: 0.5%;
+  }
+
+  .cuerpo_deportista{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.inicio_deportista{
+    padding-top: 2%;
+}
+
+ .card_sesion {
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    width: auto;
+    height: 100%;
+} 
+
+
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1%;
+    grid-auto-rows: min-content ;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-top: 2%;
+    padding-bottom:2%;
+/*     background-color:rgb(22, 14, 245, 0.3) ;
+ */    justify-items: center;
+    height: 50%;
+    margin-left: 5%;
+    margin-right: 5%;
+    box-sizing: border-box;
+    border-radius: 25px;
+}
+
+.card-img-top{
+    padding-top:1%;
+    max-width:50%;
+    max-height:50%;
+}
+.grid-item{
+    height: 90%;
+}
+

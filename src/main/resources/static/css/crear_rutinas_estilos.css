@@ -1,0 +1,54 @@
+body {
+    height: 700px;
+    background-image: url("../img/logo_fondo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 40rem;
+    background-attachment: fixed;
+    text-align: center;
+    text-align-last: center;
+    line-height: 50px;
+    margin-top: 2%;
+    margin-left: 17%;
+    
+}
+
+.principal {
+    margin-top: 7%;
+    margin-right: 2%;
+}
+
+.margen {
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.btn_rutinas {
+    padding-top: 3%;
+}
+
+.btn_rutinas a{
+    color: currentColor;    
+}
+
+.btn_rutinas a:hover{
+    color:rgb(187, 254, 252);
+    text-decoration: none;
+
+}
+
+body h2{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#titulo_sst{
+    font-family: 'Black Ops One', cursive;
+    color: black;
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+
+#guardar_rutina{
+    width: 10rem;
+}

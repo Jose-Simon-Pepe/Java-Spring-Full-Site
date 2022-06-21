@@ -1,0 +1,92 @@
+/* body{
+    background-image: url("../img/logo_fondo.png");
+    z-index: -1;
+    background-position: z-index -1;
+} */
+
+body {
+    height: 700px;
+    background-image: url("../img/logo_fondo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 40rem;
+    background-attachment: fixed;
+    text-align: center;
+    text-align-last: center;
+    line-height: 50px;
+    margin-top: 50px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.contacto{
+    margin-top: 2%;
+}
+
+.contacto li {
+    list-style: none;
+}
+
+.grid-container {
+    display: grid;
+    border-color: red;
+  }
+
+  .grid-container {
+    display: grid;
+    column-gap: 50px;
+  }
+
+.header {
+    padding-top:0;    
+    box-sizing: border-box;
+}
+    
+/*acccion sobre botones de menu*/
+
+.header a{
+    text-decoration: double;
+    color: currentColor;
+}
+.header a:hover{
+    text-decoration: none;
+    color: rgb(53, 246, 240);
+    
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    grid-auto-rows: 250px ;
+    padding: 6%;
+    background-color:rgb(22, 14, 245, 0.3) ;
+  }
+  
+  .redes_sociales i{
+        font-size: 1.1em;
+        color: rgb(23, 4, 8);
+  }
+  
+  .redes_sociales i:hover{
+    text-decoration: underline;
+}
+
+/*titulos de wrapper*/
+.titulos_adentro{
+    color: rgb(154, 13, 41);
+    font-size: 2em;
+    font-family: 'Square Peg', cursive;
+}
+
+.titulo_contacto {
+/*     font-family: 'Rock Salt', cursive;    
+ */    font-style: bold;
+ 
+ font-family: 'Black Ops One', cursive;
+
+}
+
+.telefonos p {
+    color: rgb(23, 4, 8);
+}
