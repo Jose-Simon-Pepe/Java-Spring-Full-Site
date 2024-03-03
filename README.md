@@ -1,11 +1,11 @@
 # Trabajo Integrador (Egg)
 
-Trabajo integrador final del curso Java FullStack dado por [Egg Cooperation](https://www.linkedin.com/in/jose-pepe-web-soft-dev/overlay/1635494792248/single-media-viewer/?profileId=ACoAADSoDUUBzHYE90eXV90kZKhxeF3pHaqv1y0).
+Trabajo integrador final del curso Java FullStack dado por [Egg Cooperation](https://www.linkedin.com/in/jose-pepe-web-soft-dev/overlay/1635494792248/single-media-viewer/?profileId=ACoAADSoDUUBzHYE90eXV90kZKhxeF3pHaqv1y0). <br>
 La modalidad fue grupal, siguiendo el framework "Scrum".
 
 ## Enlaces de interes:
 
-LinkedIn: https://www.linkedin.com/in/jose-pepe-web-soft-dev/
+LinkedIn: https://www.linkedin.com/in/jose-pepe-web-soft-dev/  <br>
 Github: https://github.com/Jose-Simon-Pepe
 
 ## Aclaraciones:
