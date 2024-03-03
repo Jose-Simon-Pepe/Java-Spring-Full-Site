@@ -21,3 +21,12 @@ Este es un proyecto antiguo. NO aseguro que este funcional, ni TAMPOCO volveria 
      5.a. Usaria specs ejecutables
      5.b. Usaria changelogs en base al CI
      5.c. Haria documentacion de building-deployment
+
+----
+## General Repo Metadata
+
+Mantained: No
+Production Proved: Yes
+Able to Production: No
+Methodologies: Feature Branching, Developer Branching
+Frameworks: Spring
