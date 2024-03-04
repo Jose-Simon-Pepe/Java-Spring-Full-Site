@@ -3,11 +3,6 @@
 Trabajo integrador final del curso Java FullStack dado por [Egg Cooperation](https://www.linkedin.com/in/jose-pepe-web-soft-dev/overlay/1635494792248/single-media-viewer/?profileId=ACoAADSoDUUBzHYE90eXV90kZKhxeF3pHaqv1y0). <br>
 La modalidad fue grupal, siguiendo el framework "Scrum".
 
-## Enlaces de interes:
-
-LinkedIn: https://www.linkedin.com/in/jose-pepe-web-soft-dev/  <br>
-Github: https://github.com/Jose-Simon-Pepe
-
 ## Aclaraciones:
 
 Este es un proyecto antiguo. NO aseguro que este funcional, ni TAMPOCO volveria a hacer las cosas de manera similar.
@@ -23,6 +18,7 @@ Este es un proyecto antiguo. NO aseguro que este funcional, ni TAMPOCO volveria 
      5.c. Haria documentacion de building-deployment
 
 ----
+
 ## General Repo Metadata
 
 Mantained: No <br>
@@ -30,3 +26,8 @@ Production Proved: Yes <br>
 Able to Production: No <br>
 Methodologies: Feature Branching, Developer Branching <br>
 Frameworks: Spring <br>
+
+## Enlaces de interes:
+
+LinkedIn: https://www.linkedin.com/in/jose-pepe-web-soft-dev/  <br>
+Github: https://github.com/Jose-Simon-Pepe
