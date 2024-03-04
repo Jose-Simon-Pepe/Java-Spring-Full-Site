@@ -25,8 +25,8 @@ Este es un proyecto antiguo. NO aseguro que este funcional, ni TAMPOCO volveria 
 ----
 ## General Repo Metadata
 
-Mantained: No
-Production Proved: Yes
-Able to Production: No
-Methodologies: Feature Branching, Developer Branching
-Frameworks: Spring
+Mantained: No <br>
+Production Proved: Yes <br>
+Able to Production: No <br>
+Methodologies: Feature Branching, Developer Branching <br>
+Frameworks: Spring <br>
